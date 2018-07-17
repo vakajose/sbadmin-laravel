@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Proceso;
 
 class ProcesoController extends Controller
 {
     //
     public function listProcesos()
     {
-    	return view('procesos.listProcesos');
+    	$procesos = Proceso::all();
+    	return view('procesos.listProcesos')->with(['procesos' => $procesos]);
     }
 
     public function addProceso(){

@@ -15,12 +15,25 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Creado</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($procesos as $proceso)
+                                    <tr>
+                                        <td>{{ $proceso->cod}}</td>
+                                        <td>{{ $proceso->nombre}}</td>
+                                        <td>{{ $proceso->descripcion}}</td>
+                                        <td>{{ $proceso->created_at}}</td>
+                                    </tr>
+                                    
+                                @endforeach
+
+
+
                                 <tr class="success">
                                     <td>John</td>
                                     <td>john@gmail.com</td>
