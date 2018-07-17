@@ -6,6 +6,7 @@
 
     <!-- /.row -->
     <div class="col-sm-12">
+
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-primary">
@@ -417,6 +418,11 @@
             <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
+        <div class="row">
+            <div class="build-wrap"></div>
+    
+        </div>
+        
     </div>
     <!-- /.col-sm-12 -->
 

@@ -252,6 +252,9 @@
                             <!-- /input-group -->
                         </li>
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('listProcesos') }}"><i class="fa fa-gears fa-fw"></i> Procesos</a>
+                        </li>
+                        <li {{ (Request::is('/') ? 'class="active"' : '') }}>
                             <a href="{{ url ('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
@@ -346,6 +349,8 @@
                         <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
+
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

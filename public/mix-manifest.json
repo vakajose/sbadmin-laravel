@@ -4,5 +4,8 @@
     "/css/admin.css": "/css/admin.css",
     "/css/timeline.css": "/css/timeline.css",
     "/js/admin.js": "/js/admin.js",
-    "/js/Chart.js": "/js/Chart.js"
+    "/js/Chart.js": "/js/Chart.js",
+    "/js/form-builder.min.js": "/js/form-builder.min.js",
+    "/js/form-render.min.js": "/js/form-render.min.js",
+    "/js/jquery-ui.min.js": "/js/jquery-ui.min.js"
 }

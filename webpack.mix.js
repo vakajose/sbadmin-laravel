@@ -20,3 +20,7 @@ mix
   .sass('resources/assets/sass/timeline.scss', 'public/css');
 
 mix.copy('node_modules/chart.js/Chart.js', 'public/js');
+mix.copy('node_modules/formBuilder/dist/form-builder.min.js', 'public/js');
+mix.copy('node_modules/formBuilder/dist/form-render.min.js', 'public/js');
+mix.copy('node_modules/jquery-ui-sortable/jquery-ui.min.js', 'public/js');
+

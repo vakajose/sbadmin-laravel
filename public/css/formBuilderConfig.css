@@ -1,0 +1,7 @@
+#formRender {
+  clear:both;
+  display:none;
+  button{
+    float:right;
+  }
+}

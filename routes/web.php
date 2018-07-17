@@ -78,3 +78,8 @@ Route::get('/progressbars', function() {
 Route::get('/collapse', function() {
     return View::make('admin.collapse');
 });
+
+
+//Url personalizadas  
+Route::get('/listProcesos', 'ProcesoController@listProcesos')->name('listProcesos');
+Route::get('/addProceso', 'ProcesoController@addProceso')->name('addProceso');
