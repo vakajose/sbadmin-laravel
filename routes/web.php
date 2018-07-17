@@ -80,6 +80,7 @@ Route::get('/collapse', function() {
 });
 
 
-//Url personalizadas  
-Route::get('/listProcesos', 'ProcesoController@listProcesos')->name('listProcesos');
-Route::get('/addProceso', 'ProcesoController@addProceso')->name('addProceso');
+//Proceso  
+Route::get('/procesos', 'ProcesoController@listProcesos')->name('listProcesos');
+Route::get('/proceso/crear', 'ProcesoController@addProceso')->name('addProceso');
+Route::post('/procesos','ProcesoController@saveProceso')->name('saveProceso');

@@ -252,7 +252,7 @@
                             <!-- /input-group -->
                         </li>
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('listProcesos') }}"><i class="fa fa-gears fa-fw"></i> Procesos</a>
+                            <a href="{{ route ('listProcesos') }}"><i class="fa fa-gears fa-fw"></i> Procesos</a>
                         </li>
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
                             <a href="{{ url ('admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>

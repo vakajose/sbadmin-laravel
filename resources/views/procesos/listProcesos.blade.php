@@ -6,10 +6,13 @@
     
     <!-- /.row -->
     <div class="col-sm-12">
-
+        <div class="row">
+            <div class="col-md-12">
+                 <a href="{{ route ('addProceso') }}">@include('admin.widgets.button', array('value'=>'Nuevo', 'class'=>'primary'))</a>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
-                <a href="{{ url ('addProceso') }}">@include('admin.widgets.button', array('value'=>'Nuevo', 'class'=>'primary'))</a>
                 @component('admin.widgets.panel')
                     @slot('panelBody')
                         <table class="table table-bordered">
@@ -18,66 +21,36 @@
                                     <th>Codigo</th>
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
-                                    <th>Creado</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($procesos as $proceso)
                                     <tr>
-                                        <td>{{ $proceso->cod}}</td>
-                                        <td>{{ $proceso->nombre}}</td>
-                                        <td>{{ $proceso->descripcion}}</td>
-                                        <td>{{ $proceso->created_at}}</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-caret-down"></i> {{$proceso->cod}}</a>
+                                                <ul class="dropdown-menu dropdown-user">
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-edit fa-fw"></i>Editar</a>
+                                                    </li>
+                                                    <li>
+                                                         <a href="#"><i class="fa fa-trash-o fa-fw"></i> Eliminar</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>{{$proceso->nombre}}</td>
+                                        <td>{{$proceso->descripcion}}</td>
                                     </tr>
-                                    
                                 @endforeach
-
-
-
-                                <tr class="success">
-                                    <td>John</td>
-                                    <td>john@gmail.com</td>
-                                    <td>London, UK</td>
-                                </tr>
-                                <tr>
-                                    <td>Wayne</td>
-                                    <td>wayne@gmail.com</td>
-                                    <td>Manchester, UK</td>
-                                </tr>
-                                <tr class="info">
-                                    <td>Andy</td>
-                                    <td>andy@gmail.com</td>
-                                    <td>Merseyside, UK</td>
-                                </tr>
-                                <tr>
-                                    <td>Danny</td>
-                                    <td>danny@gmail.com</td>
-                                    <td>Middlesborough, UK</td>
-                                </tr>
-                                <tr class="warning">
-                                    <td>Frank</td>
-                                    <td>frank@gmail.com</td>
-                                    <td>Southampton, UK</td>
-                                </tr>
-                                <tr>
-                                    <td>Scott</td>
-                                    <td>scott@gmail.com</td>
-                                    <td>Newcastle, UK</td>
-                                </tr>
-                                <tr class="danger">
-                                    <td>Rickie</td>
-                                    <td>rickie@gmail.com</td>
-                                    <td>Burnley, UK</td>
-                                </tr>
                             </tbody>
                         </table>
                     @endslot
                 @endcomponent
             </div>
-            <!-- /.col-sm-6 -->
+            <!-- /.col-sm-12 -->
         </div>
-        
+        <!-- row -->
     </div>
     <!-- /.col-sm-12 -->
-
 @endsection
