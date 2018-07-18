@@ -22,7 +22,7 @@ class ProcesoController extends Controller
     {
     	return view('procesos.editProceso')->with(['proceso'=>$proceso]);
     }
-    
+    	
     public function deleteProceso(Proceso $proceso){
     	$proceso->delete();
     	return redirect()->route('listProcesos');
@@ -44,5 +44,9 @@ class ProcesoController extends Controller
     		$request->all()
     	);
     	return redirect()->route('listProcesos');
+    }
+     public function editFormProceso(Proceso $proceso)
+    {
+    	return view('procesos.editFormProceso')->with(['proceso'=>$proceso]);
     }
 }

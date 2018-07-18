@@ -20,4 +20,12 @@ jQuery(function($) {
     $formEditor.toggle();
     $formContainer.toggle();
   });
+
+  document.getElementById('grabarJSON').addEventListener('click', function() {
+   //al hacer click en grabar se ejecuta esto
+   alert(formBuilder.actions.getData('json'));
+      
+  });
+
 });
+

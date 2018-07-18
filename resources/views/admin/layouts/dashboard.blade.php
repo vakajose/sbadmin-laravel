@@ -376,4 +376,8 @@
             <!-- /#page-wrapper -->
         </div>
     </div>
+
+@endsection
+@section('scripts')
+    @yield('jsScripts')
 @endsection

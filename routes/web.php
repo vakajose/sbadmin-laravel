@@ -93,6 +93,7 @@ Route::get('/procesos/{proceso}/edit','ProcesoController@editProceso')->name('ed
 Route::put('/procesos/{proceso}','ProcesoController@updateProceso')->name('updateProceso');//update
 Route::delete('/procesos/{proceso}','ProcesoController@deleteProceso')->name('deleteProceso');//delete
 
+Route::get('/procesos/{proceso}/editform','ProcesoController@editFormProceso')->name('editFormProceso');//editFormulario
 //autentificacion
 
 //Auth::routes();

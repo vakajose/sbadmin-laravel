@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/timeline.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/timeline.css') }}"> --}}
 
     <!-- Scripts -->
     <script>
@@ -24,13 +24,10 @@
 <body>
 
 @yield('body')
-
 <script src="{{ asset("js/app.js") }}"></script>
-<script src="{{ asset("js/Chart.js") }}"></script>
-<script src="{{ asset("js/jquery-ui.min.js") }}"></script>
+{{-- <script src="{{ asset("js/Chart.js") }}"></script> --}}
 <script src="{{ asset("js/admin.js") }}"></script>
-<script src="{{ asset("js/form-builder.min.js") }}"></script>
-<script src="{{ asset("js/form-render.min.js") }}"></script>
-<script src="{{ asset("js/formBuilderConfig.js") }}"></script>
+@yield('scripts')
+
 </body>
 </html>

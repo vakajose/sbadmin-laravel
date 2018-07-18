@@ -6,6 +6,5 @@
 
 <div class="col-md-12">
     @include('procesos._form',['proceso'=>$proceso])
-
 </div>
 @endsection
