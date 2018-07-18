@@ -6,7 +6,7 @@
                 @component('admin.widgets.panel')
                     @slot ('panelTitle', 'Please Sign In')
                     @slot ('panelBody')
-                        <form class="form-horizontal" role="form" method="POST" action="#">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <div class="col-md-12">
                                     <label for="email" class="control-label">Username</label>
@@ -53,8 +53,12 @@
                                         Login
                                     </button>
                                     <br>
-                                    <a class="btn-link" href="#">
-                                        Forgot Your Password?
+                                    <a class="btn-link" href="{{ route('password.request') }}">
+                                        Olvidaste tu contraseña?
+                                    </a>
+                                    <br>
+                                    <a class="btn-link" href="{{ route('register') }}">
+                                        Registrate
                                     </a>
                                 </div>
                             </div>
