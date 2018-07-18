@@ -1,14 +1,12 @@
-@extends('layouts.app')
-
-@section('content')
+@extends ('admin.layouts.app')
+@section ('body')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Register</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-8 col-md-offset-2">
+                @component('admin.widgets.panel')
+                    @slot ('panelTitle', 'Registro de Usuario')
+                    @slot ('panelBody')
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -69,9 +67,9 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                @endslot
+                @endcomponent
             </div>
         </div>
     </div>
-</div>
 @endsection
