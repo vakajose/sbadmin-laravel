@@ -21,6 +21,7 @@
                                     <th>Codigo</th>
                                     <th>Nombre</th>
                                     <th>Descripcion</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,16 +32,30 @@
                                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-caret-down"></i> {{$proceso->cod}}</a>
                                                 <ul class="dropdown-menu dropdown-user">
                                                     <li>
-                                                        <a href="#"><i class="fa fa-edit fa-fw"></i>Editar</a>
+                                                        <a href="{{ route('editProceso',['proceso'=>$proceso->id]) }}"><i class="fa fa-edit fa-fw"></i>Editar Parametros</a>
                                                     </li>
                                                     <li>
-                                                         <a href="#"><i class="fa fa-trash-o fa-fw"></i> Eliminar</a>
+                                                        <a href="#"><i class="fa fa-file-text fa-fw"></i>Editar Formulario</a>            
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-group fa-fw"></i>Participantes</a>            
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fa fa-rocket fa-fw"></i>Flujo</a>            
                                                     </li>
                                                 </ul>
                                             </div>
                                         </td>
                                         <td>{{$proceso->nombre}}</td>
                                         <td>{{$proceso->descripcion}}</td>
+                                        <td>
+                                            <form action="{{ route('deleteProceso',['proceso'=>$proceso->id])}}" method="POST">
+                                                    {{csrf_field()}}
+                                                    {{method_field('DELETE')}}
+
+                                                    <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-trash-o fa-fw"></i>Eliminar</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

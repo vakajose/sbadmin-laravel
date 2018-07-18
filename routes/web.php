@@ -82,5 +82,9 @@ Route::get('/collapse', function() {
 
 //Proceso  
 Route::get('/procesos', 'ProcesoController@listProcesos')->name('listProcesos');
-Route::get('/proceso/crear', 'ProcesoController@addProceso')->name('addProceso');
-Route::post('/procesos','ProcesoController@saveProceso')->name('saveProceso');
+Route::get('/procesos/crear', 'ProcesoController@addProceso')->name('addProceso');//create
+Route::post('/procesos','ProcesoController@saveProceso')->name('saveProceso');//store
+
+Route::get('/procesos/{proceso}/edit','ProcesoController@editProceso')->name('editProceso');//edit
+Route::put('/procesos/{proceso}','ProcesoController@updateProceso')->name('updateProceso');//update
+Route::delete('/procesos/{proceso}','ProcesoController@deleteProceso')->name('deleteProceso');//delete

@@ -135,8 +135,9 @@
                                 <input type="checkbox">Disabled Checkbox
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Disabled Button</button>
-                    </fieldset>
+                      </fieldset>   
+                        <button type="submit" class="btn btn-primary" disabled="true">Disabled Button</button>
+                   
                 </form>
                 <h2>Form Validation</h2>
                 <form role="form">
