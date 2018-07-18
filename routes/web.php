@@ -20,7 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  });*/
 
 /* REDIRECCION A LOGIN*/
-//Route::redirect('/','loginView');
+Route::redirect('/','login');
 
 Route::get('/admin', function () {
     return view('admin.home');

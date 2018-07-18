@@ -1,69 +1,73 @@
-@extends('layouts.app')
-
-@section('content')
+@extends ('admin.layouts.app')
+@section ('body')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Login</div>
-
-                <div class="card-body">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-4 col-md-offset-4">
+                @component('admin.widgets.panel')
+                    @slot ('panelTitle', 'Please Sign In')
+                    @slot ('panelBody')
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <div class="col-md-12">
+                                    <label for="email" class="control-label">Username</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" class="form-control" name="email"
+                                           value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                                    @endif
+                                </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <div class="col-md-12">
+                                    <label for="password" class="control-label">Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+                        <div class="form-group">
+                                <div class="col-md-offset-3 col-md-6 text-center">
+                                    <div class="checkbox-inline">
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+                        <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-success btn-block">
+                                        Login
+                                    </button>
+                                    <br>
+                                    <a class="btn-link" href="{{ route('password.request') }}">
+                                        Olvidaste tu contraseña?
+                                    </a>
+                                    <br>
+                                    <a class="btn-link" href="{{ route('register') }}">
+                                        Registrate
+                                    </a>
+                                </div>
+                            </div>
                     </form>
-                </div>
+                @endslot
+                @endcomponent
             </div>
         </div>
     </div>
-</div>
 @endsection
