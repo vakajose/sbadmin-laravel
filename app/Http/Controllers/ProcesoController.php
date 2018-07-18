@@ -49,4 +49,8 @@ class ProcesoController extends Controller
     {
     	return view('procesos.editFormProceso')->with(['proceso'=>$proceso]);
     }
+    public function saveFormProceso(Request $request)
+    {
+        
+    }
 }

@@ -10,6 +10,10 @@
    		<h3 class="nombre-proceso">{{$proceso->cod}}: {{$proceso->nombre}}</h3>
     	<div id="formEditor"></div>  
     	<div id="formRender">
+        <script>
+                var proce = '{{$proceso}}';
+                //console.log(proce);
+        </script>
     		<form action="#"></form>
     		<button class="btn btn-primary edit-form">Editar</button>
     		<button id="grabarJSON" class="btn btn-success edit-form">Grabar</button>

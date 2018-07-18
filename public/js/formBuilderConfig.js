@@ -23,8 +23,30 @@ jQuery(function($) {
 
   document.getElementById('grabarJSON').addEventListener('click', function() {
    //al hacer click en grabar se ejecuta esto
-   alert(formBuilder.actions.getData('json'));
-      
+    var datos=proce;
+    var metodo='POST';
+    var action='/procesos/saveform';
+    var MsjError='<script> alert("Error al enviar los datos")</scrpt>';
+    var MsjEnviando= 'Enviando... Por Favor Espere';
+    $.ajax({
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+},
+       type: metodo,
+       url: action,
+       data: datos,
+       beforeSend: function(){
+          $('.msjRespuesta').html(MsjEnviando);
+       },
+       error: function(){
+          $('.msjRespuesta').html(MsjError);
+       },
+       success:function(data){
+          $('.msjRespuesta').html(data);
+       }
+    }); 
+    console.log(proce); 
+    return false;
   });
 
 });
