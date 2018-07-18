@@ -11,12 +11,16 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('admin.home');
-// });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*Route::get('/', function () {
+     return view('admin.home');
+ });*/
 
 /* REDIRECCION A LOGIN*/
-Route::redirect('/','login');
+//Route::redirect('/','loginView');
 
 Route::get('/admin', function () {
     return view('admin.home');
@@ -89,24 +93,10 @@ Route::get('/addProceso', 'ProcesoController@addProceso')->name('addProceso');
 
 //autentificacion
 
-//Auth::routes();
-        Route::get('login', function () {return view('admin.auth.login');})->name('Login');
-        //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-        Route::post('login', 'Auth\LoginController@login')->name('login');
-        Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-        // Registration Routes...
-        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-        Route::post('register', 'Auth\RegisterController@register')->name('register');
-
-        // Password Reset Routes...
-        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-        Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas Sistema de Autenticacion
 
@@ -199,3 +189,5 @@ Route::middleware(['auth'])->group(function(){
         ->name('role.edit')
         ->middleware('permission:role.edit');
 });
+
+
