@@ -96,7 +96,7 @@ Route::delete('/procesos/{proceso}','ProcesoController@deleteProceso')->name('de
 //autentificacion
 
 //Auth::routes();
-        Route::get('login', function () {return view('admin.auth.login');})->name('Login');
+        Route::get('login', function () {return view('admin.auth.login');});
         //Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
         Route::post('login', 'Auth\LoginController@login')->name('login');
         Route::post('logout', 'Auth\LoginController@logout')->name('logout');
