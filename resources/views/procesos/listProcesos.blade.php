@@ -38,7 +38,7 @@
                                                         <a href="{{ route('editFormProceso',['proceso'=>$proceso->id]) }}"><i class="fa fa-file-text fa-fw"></i>Editar Formulario</a>            
                                                     </li>
                                                     <li>
-                                                        <a href="#"><i class="fa fa-group fa-fw"></i>Participantes</a>            
+                                                        <a href="{{ route('editPeopleProceso',['proceso'=>$proceso->id]) }}"><i class="fa fa-group fa-fw"></i>Participantes</a>            
                                                     </li>
                                                     <li>
                                                         <a href="#"><i class="fa fa-rocket fa-fw"></i>Flujo</a>            
