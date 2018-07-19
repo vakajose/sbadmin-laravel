@@ -69,6 +69,7 @@ class ProcesoController extends Controller
     	);
     	return redirect()->route('listProcesos');
     }
+
     public function saveParticipante(Request $request)
     { 
         $users =  User::all();
@@ -97,4 +98,32 @@ class ProcesoController extends Controller
         return redirect()->route('listProcesos');
     }
      
+
+     public function editFormProceso(Proceso $proceso)
+    {
+
+    	return view('procesos.editFormProceso')->with(['proceso'=>$proceso]);
+    }
+    private function updateFormProceso()
+    {
+
+    }
+    public function saveFormProceso(Request $request)
+    {   
+
+        if($_POST)
+        {
+            $id=$_POST['id'];
+            $form=$_POST['form'];
+            $peli=Proceso::where('id', '=', $id)->first();
+            echo $peli;
+
+            $peli->update($request->all());
+            
+        }else{
+            echo "fallo al recibir el POST";
+        }
+        
+    }
+
 }

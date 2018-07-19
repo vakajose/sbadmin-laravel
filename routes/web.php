@@ -98,8 +98,15 @@ Route::put('/procesos/{proceso}','ProcesoController@updateProceso')->name('updat
 Route::delete('/procesos/{proceso}','ProcesoController@deleteProceso')->name('deleteProceso');//delete
 
 Route::get('/procesos/{proceso}/editform','ProcesoController@editFormProceso')->name('editFormProceso');//editFormulario
+
 Route::get('/procesos/{proceso}/editParticipantes','ProcesoController@editPeopleProceso')->name('editPeopleProceso');
 Route::post('/procesos','ProcesoController@saveParticipante')->name('saveParticipante');//store
+
+Route::post('/procesos/saveform','ProcesoController@saveFormProceso')->name('saveFormProceso');
+
+//autentificacion
+
+
 
 //autentificacion
 //Auth::routes();
