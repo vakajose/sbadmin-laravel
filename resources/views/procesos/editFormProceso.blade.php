@@ -11,7 +11,7 @@
     	<div id="formEditor"></div>  
     	<div id="formRender">
         <script>
-                var proce = '{{$proceso}}';
+                var id_proceso = '{{$proceso->id}}';
                 //console.log(proce);
         </script>
     		<form action="#"></form>

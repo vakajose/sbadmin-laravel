@@ -47,10 +47,28 @@ class ProcesoController extends Controller
     }
      public function editFormProceso(Proceso $proceso)
     {
+
     	return view('procesos.editFormProceso')->with(['proceso'=>$proceso]);
     }
-    public function saveFormProceso(Request $request)
+    private function updateFormProceso()
     {
+
+    }
+    public function saveFormProceso(Request $request)
+    {   
+
+        if($_POST)
+        {
+            $id=$_POST['id'];
+            $form=$_POST['form'];
+            $peli=Proceso::where('id', '=', $id)->first();
+            echo $peli;
+
+            $peli->update($request->all());
+            
+        }else{
+            echo "fallo al recibir el POST";
+        }
         
     }
 }

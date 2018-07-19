@@ -23,7 +23,34 @@ jQuery(function($) {
 
   document.getElementById('grabarJSON').addEventListener('click', function() {
    //al hacer click en grabar se ejecuta esto
-    var datos=proce;
+    
+    var metodo='POST';
+    var action='/procesos/saveform';
+    var parametros = {
+                id    : id_proceso,
+                form  : formBuilder.actions.getData('json')
+        };
+    $.ajax({
+      headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+       type: metodo,
+       url: action,
+       data: parametros,
+       success:function(data){
+          $('.msjRespuesta').html(data);
+          alert("Los Datos fueron agregados con exito");
+       },
+       error:function(jqXHR, textStatus, errorThrow){
+          console.log('Error : '+ errorThrow);
+       }
+    }); 
+  });
+
+});
+
+/*
+var proc=proce;
     var metodo='POST';
     var action='/procesos/saveform';
     var MsjError='<script> alert("Error al enviar los datos")</scrpt>';
@@ -31,10 +58,10 @@ jQuery(function($) {
     $.ajax({
       headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-},
+      },
        type: metodo,
        url: action,
-       data: datos,
+       data: proc,
        beforeSend: function(){
           $('.msjRespuesta').html(MsjEnviando);
        },
@@ -45,9 +72,6 @@ jQuery(function($) {
           $('.msjRespuesta').html(data);
        }
     }); 
-    console.log(proce); 
+    console.log(proc); 
     return false;
-  });
-
-});
-
+*/
